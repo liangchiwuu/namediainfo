@@ -1,9 +1,9 @@
-# Name Mediainfo
+# Namediainfo
 
 [![License](https://img.shields.io/badge/license-GPL%203.0-brightgreen.svg)](./LICENSE)
 ![Language](https://img.shields.io/badge/language-Python-blue.svg)
 
-Name Mediainfo is a tool to automatically rename video files with the date they were encoded.
+Namediainfo is a tool to automatically rename video files with the date they were encoded.
 
 ## Overview
 
