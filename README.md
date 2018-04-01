@@ -9,7 +9,9 @@ Namediainfo is a tool to automatically rename video files with the date they wer
 
 Make your life easier.
 
-![Demo](./demo.png)
+|Before|After|
+|:---:|:---:|
+|![Before](./demo/before.png)|![After](./demo/after.png)|
 
 ## Dependencies
 
