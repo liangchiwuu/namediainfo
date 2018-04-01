@@ -24,5 +24,5 @@ pymediainfo
 ## Usage
 
 ``` bash
-$ python rename.py
+$ python namediainfo.py
 ```
