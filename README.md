@@ -23,6 +23,18 @@ pymediainfo
 
 ## Usage
 
+```
+$ python namediainfo.py [target directory] [output pattern] [hours to shift]
+```
+
+Example:
+
 ``` bash
-$ python namediainfo.py
+$ python namediainfo.py './videos/' '%Y-%m-%d %H.%M.%S' -7
+rename ./videos/IMG_0762.MOV -> ./videos/2017-11-10 22.29.02.MOV
+rename ./videos/IMG_0763.MOV -> ./videos/2017-11-10 22.35.48.MOV
+rename ./videos/IMG_0764.MOV -> ./videos/2017-11-10 22.49.54.MOV
+rename ./videos/MOV_0004.mp4 -> ./videos/2017-11-10 22.55.54.mp4
+rename ./videos/MOV_0005.mp4 -> ./videos/2017-11-10 22.56.27.mp4
+rename ./videos/MOV_0006.mp4 -> ./videos/2017-11-10 23.25.16.mp4
 ```
