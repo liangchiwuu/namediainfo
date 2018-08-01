@@ -15,22 +15,29 @@ Make your life easier.
 
 ## Dependencies
 
-MediaInfo  
-[https://mediaarea.net/en/MediaInfo](https://mediaarea.net/en/MediaInfo)
-
-pymediainfo  
-[https://pypi.python.org/pypi/pymediainfo/](https://pypi.python.org/pypi/pymediainfo/)
+- Python 2.7
+- [MediaInfo](https://mediaarea.net/en/MediaInfo)
+- [pymediainfo](https://pymediainfo.readthedocs.io/)
 
 ## Usage
 
-```
-$ python namediainfo.py [target directory] [output pattern] [hours to shift]
+```bash
+$ python namediainfo.py -h
+usage: namediainfo.py [-h] -d DIRECTORY -p PATTERN [-o OFFSET]
+
+Rename all video files in a directory to their encoded dates.
+
+optional arguments:
+  -h, --help    show this help message and exit
+  -d DIRECTORY  target directory
+  -p PATTERN    output pattern
+  -o OFFSET     hours to shift
 ```
 
 Example:
 
-``` bash
-$ python namediainfo.py './videos/' '%Y-%m-%d %H.%M.%S' -7
+```bash
+$ python namediainfo.py -d './videos/' -p '%Y-%m-%d %H.%M.%S' -o -7
 rename ./videos/IMG_0762.MOV -> ./videos/2017-11-10 22.29.02.MOV
 rename ./videos/IMG_0763.MOV -> ./videos/2017-11-10 22.35.48.MOV
 rename ./videos/IMG_0764.MOV -> ./videos/2017-11-10 22.49.54.MOV

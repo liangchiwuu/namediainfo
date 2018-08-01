@@ -1,6 +1,6 @@
+import argparse
 import datetime
 import os
-import sys
 
 from pymediainfo import MediaInfo
 
@@ -25,16 +25,19 @@ def __rename(src, dst, retry=0):
 
 
 def main():
-    target_dir = sys.argv[1]
-    output_pattern = sys.argv[2]
-    hour_offset = float(sys.argv[3])
+    parser = argparse.ArgumentParser(description='Rename all video files in a directory to their encoded dates.')
+    parser.add_argument('-d', dest='directory', help='target directory', type=str, required=True)
+    parser.add_argument('-p', dest='pattern', help='output pattern', type=str, required=True)
+    parser.add_argument('-o', dest='offset', help='hours to shift', type=int, default=0)
 
-    for f in os.listdir(target_dir):
-        media_info = MediaInfo.parse(os.path.join(target_dir, f))
+    args = parser.parse_args()
+
+    for f in os.listdir(args.directory):
+        media_info = MediaInfo.parse(os.path.join(args.directory, f))
         for track in media_info.tracks:
             if track.track_type == 'Video':
-                f_after = __parse_filename(track.encoded_date, output_pattern, hour_offset) + f[f.rfind('.'):]
-                __rename(os.path.join(target_dir, f), os.path.join(target_dir, f_after))
+                f_after = __parse_filename(track.encoded_date, args.pattern, args.offset) + f[f.rfind('.'):]
+                __rename(os.path.join(args.directory, f), os.path.join(args.directory, f_after))
 
 
 if __name__ == '__main__':
